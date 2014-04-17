@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_shoe_path(@shoe) %> |
+<%= link_to 'Back', shoes_path %>
+
+<p>
+  <b>Name:</b>
+  <%= @shoe.name %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @shoe.size %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @shoe.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @shoe.price %>
+</p>
+<p>
+  <b>Color:</b>
+  <%= @shoe.color %>
+</p>
+<p>
+  <b>Slika:</b>
+  <%= image_tag @shoe.photo.url %>
+</p>
+<h2>New comment</h2>
+<%= render 'comments/form' %>
+<h2>Comment list</h2>
+<% @shoe.comments.each do |comment| %>
+    <div>
+     <%= comment.content %>
+    </div>
+<% end %>
